@@ -17,7 +17,7 @@ class App extends React.Component {
                         comment='Nice post bro!'
                         authorImg={faker.image.avatar()}
                     />
-                </ApprovalCard>C
+                </ApprovalCard>
 
                 <ApprovalCard>
                     <CommentDetail
