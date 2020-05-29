@@ -1,5 +1,7 @@
 import React from 'react';
-// import './SeasonDisplay.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import './SeasonDisplay.css';
+
 
 const seasonConfig = {
     summer: {
@@ -26,9 +28,9 @@ const seasonDisplay = props => {
 
     return (
         <div className={`season-display ${season}`}>
-            < i className={`fas fa-${iconName} icon-left fa-7x`}/>
+            <FontAwesomeIcon icon={iconName} className='icon-left'/>
             <h1>{text}</h1>
-            < i className={`fas fa-${iconName} icon-right fa-7x`}/>
+            <FontAwesomeIcon icon={iconName} className='icon-right'/>
         </div>
     );
 }
