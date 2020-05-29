@@ -1,0 +1,15 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 60px;
+    background-color: #ccc;
+
+}
+
+h1 {
+    font-size: 24px;
+    margin-left: 20px;
+}
+

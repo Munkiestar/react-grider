@@ -2,13 +2,10 @@ import React from 'react';
 import './FontawesomeIcons/index';
 
 import SeasonDisplay from "./SeasonDisplay/SeasonDisplay";
+import Spinner from './Spinner/Spinner';
 
 class App extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //
-    //     this.state = {lat: null, errorMessage: ''};
-    // }
+
     state = {lat: null, errorMessage: ''};
 
     componentDidMount() {
@@ -32,7 +29,7 @@ class App extends React.Component {
             return <SeasonDisplay latitude={this.state.lat}/>;
         }
 
-        return <div> "Please accept location request" </div>;
+        return <Spinner message='Please accept location request'/>
     }
 
 }
