@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import SearchBar from "./components/SearchBar/SearchBar";
+import youtube from "./api/youtube";
+
+const KEY = 'AIzaSyBXM0msibM9uqFRXxTQis4cnruCS8FEZh8'
+
+handleTermSubmit = async term => {
+    const response = await youtube.get('/search', {
+        params: {
+            q: term,
+            part: 'snippet',
+            maxResults: 5,
+            type: 'video',
+            key: KEY
+        }
+    })
+}
+
+class App extends Component {
+    render() {
+        return (
+            <div className='ui container'>
+                <SearchBar/>
+            </div>
+        );
+    }
 }
 
 export default App;
