@@ -17,22 +17,24 @@ class App extends Component {
         const response = await youtube.get('/search', {
             params: {
                 q: term,
-                // part: 'snippet',
-                // maxResults: 5,
-                // type: 'video',
-                // key: KEY
             }
         });
 
         this.setState({videos: response.data.items})
     }
 
+    handleVideoSelect = video => {
+        console.log('from the app', video)
+    }
 
     render() {
         return (
             <div className='ui container' style={{marginTop: '35px'}}>
                 <SearchBar onFormSubmit={this.handleTermSubmit}/>
-                <VideoList videos={this.state.videos}/>
+                <VideoList
+                    videos={this.state.videos}
+                    onVideoSelect={this.handleVideoSelect}
+                />
             </div>
         );
     }
